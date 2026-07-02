@@ -1,4 +1,7 @@
-# SHL Assessment Recommendation Agent
+> [!NOTE]
+>  This project is designed as a conversational SHL assessment recommendation system and is intended for educational and evaluation purposes. Don't copy or use it as your personal assignment.
+
+## SHL Assessment Recommendation Agent
 
 An AI-powered conversational recommendation system that helps recruiters discover relevant SHL assessments based on hiring requirements.
 
@@ -18,11 +21,11 @@ The assistant can:
 * Compare assessments
 * Refuse unrelated/off-topic queries
 
----
+<br>
 
-# Features
+## Features
 
-## Conversational Recommendations
+### Conversational Recommendations
 
 The assistant recommends SHL assessments based on:
 
@@ -38,9 +41,9 @@ Example:
 Hiring a Java backend developer with communication skills
 ```
 
----
+<br>
 
-## Clarification Handling
+### Clarification Handling
 
 If the query is too vague, the assistant asks follow-up questions.
 
@@ -56,9 +59,9 @@ Response:
 Could you share the role, seniority level, and important skills you are hiring for?
 ```
 
----
+<br>
 
-## Comparison Queries
+### Comparison Queries
 
 The system can compare assessments.
 
@@ -68,9 +71,9 @@ Example:
 What is the difference between OPQ and Java 8?
 ```
 
----
+<br>
 
-## Off-Topic Refusal
+### Off-Topic Refusal
 
 The assistant only handles SHL assessment-related queries.
 
@@ -86,9 +89,9 @@ Response:
 I can only help with SHL assessments and assessment recommendations.
 ```
 
----
+<br>
 
-# Tech Stack
+## Tech Stack
 
 | Component       | Technology            |
 | --------------- | --------------------- |
@@ -99,9 +102,9 @@ I can only help with SHL assessments and assessment recommendations.
 | Web Scraping    | BeautifulSoup         |
 | Data Storage    | JSON                  |
 
----
+<br>
 
-# Project Structure
+## Project Structure
 
 ```text
 shl-assessment-agent/
@@ -132,11 +135,11 @@ shl-assessment-agent/
 └── README.md
 ```
 
----
+<br>
 
-# How It Works
+## How It Works
 
-## 1. Data Collection
+### 1. Data Collection
 
 The scraper collects SHL assessment information from the SHL product catalog.
 
@@ -147,68 +150,61 @@ Collected information includes:
 * URL
 * Full text content
 
----
 
-## 2. Embedding Generation
+### 2. Embedding Generation
 
-Assessment content is converted into embeddings using:
+Assessment content is converted into embeddings using: `all-MiniLM-L6-v2`
 
-```text
-all-MiniLM-L6-v2
-```
 
----
-
-## 3. Vector Search
+### 3. Vector Search
 
 FAISS is used to retrieve semantically relevant assessments based on user queries.
 
----
 
-## 4. LLM Response Generation
+### 4. LLM Response Generation
 
 Relevant assessments are passed to Groq Llama 3.1 to generate concise conversational responses.
 
----
+<br>
 
-# Installation
+## Installation
 
-## 1. Clone Repository
+### 1. Clone Repository
 
 ```bash
-git clone <your-repo-url>
-cd shl-assessment-agent
+git clone https://github.com/harshkad/SHLRecommendationAgent.git
+cd SHLRecommendationAgent
 ```
 
----
+<br>
 
-## 2. Create Virtual Environment
+### 2. Create Virtual Environment
 
-### Windows
+#### Windows
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-### Mac/Linux
+#### Mac/Linux
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
----
+<br>
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+<br>
 
-## 4. Configure Environment Variables
+### 4. Configure Environment Variables
 
 Create a `.env` file:
 
@@ -216,21 +212,21 @@ Create a `.env` file:
 GROQ_API_KEY=your_api_key_here
 ```
 
----
+<br>
 
-# Running the Project
+## Running the Project
 
-## Start FastAPI Server
+### Start FastAPI Server
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
----
+<br>
 
-# API Endpoints
+## API Endpoints
 
-## Health Check
+### Health Check
 
 ```http
 GET /health
@@ -244,9 +240,9 @@ Response:
 }
 ```
 
----
+<br>
 
-## Chat Endpoint
+### Chat Endpoint
 
 ```http
 POST /chat
@@ -281,9 +277,9 @@ Example Response:
 }
 ```
 
----
+<br>
 
-# Interactive API Docs
+## Interactive API Docs
 
 FastAPI automatically provides Swagger documentation.
 
@@ -293,9 +289,9 @@ Open:
 http://127.0.0.1:8000/docs
 ```
 
----
+<br>
 
-# Current Capabilities
+## Current Capabilities
 
 * Semantic retrieval using FAISS
 * Conversational recommendations
@@ -305,9 +301,9 @@ http://127.0.0.1:8000/docs
 * SHL-only grounded responses
 * Structured JSON responses
 
----
+<br>
 
-# Future Improvements
+## Future Improvements
 
 Potential future enhancements:
 
@@ -321,7 +317,7 @@ Potential future enhancements:
 
 ---
 
-# Example Queries
+## Example Queries
 
 ```text
 Hiring Java backend developer with stakeholder communication
@@ -338,11 +334,3 @@ What is the difference between OPQ and Java 8?
 ```text
 Hiring senior data analyst with SQL and leadership skills
 ```
-
----
-
-# Notes
-
-This project is designed as a conversational SHL assessment recommendation system and is intended for educational and evaluation purposes.
-
-The assistant only recommends assessments available in the SHL product catalog.
