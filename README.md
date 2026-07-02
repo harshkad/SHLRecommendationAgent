@@ -18,7 +18,7 @@ The assistant can:
 * Compare assessments
 * Refuse unrelated/off-topic queries
 
-<br>
+---
 
 # Features
 
@@ -38,7 +38,7 @@ Example:
 Hiring a Java backend developer with communication skills
 ```
 
-<br>
+---
 
 ## Clarification Handling
 
@@ -56,7 +56,7 @@ Response:
 Could you share the role, seniority level, and important skills you are hiring for?
 ```
 
-<br>
+---
 
 ## Comparison Queries
 
@@ -68,7 +68,7 @@ Example:
 What is the difference between OPQ and Java 8?
 ```
 
-<br>
+---
 
 ## Off-Topic Refusal
 
@@ -86,7 +86,7 @@ Response:
 I can only help with SHL assessments and assessment recommendations.
 ```
 
-<br>
+---
 
 # Tech Stack
 
@@ -99,7 +99,7 @@ I can only help with SHL assessments and assessment recommendations.
 | Web Scraping    | BeautifulSoup         |
 | Data Storage    | JSON                  |
 
-<br>
+---
 
 # Project Structure
 
@@ -132,7 +132,7 @@ shl-assessment-agent/
 └── README.md
 ```
 
-<br>
+---
 
 # How It Works
 
@@ -147,6 +147,7 @@ Collected information includes:
 * URL
 * Full text content
 
+---
 
 ## 2. Embedding Generation
 
@@ -156,28 +157,30 @@ Assessment content is converted into embeddings using:
 all-MiniLM-L6-v2
 ```
 
+---
 
 ## 3. Vector Search
 
 FAISS is used to retrieve semantically relevant assessments based on user queries.
 
+---
 
 ## 4. LLM Response Generation
 
 Relevant assessments are passed to Groq Llama 3.1 to generate concise conversational responses.
 
-<br>
+---
 
 # Installation
 
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/harshkad/SHLRecommendationAgent.git
-cd SHLRecommendationAgent
+git clone <your-repo-url>
+cd shl-assessment-agent
 ```
 
-<br>
+---
 
 ## 2. Create Virtual Environment
 
@@ -195,7 +198,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-<br>
+---
 
 ## 3. Install Dependencies
 
@@ -203,7 +206,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-<br>
+---
 
 ## 4. Configure Environment Variables
 
@@ -213,7 +216,7 @@ Create a `.env` file:
 GROQ_API_KEY=your_api_key_here
 ```
 
-<br>
+---
 
 # Running the Project
 
@@ -223,7 +226,7 @@ GROQ_API_KEY=your_api_key_here
 uvicorn app.main:app --reload
 ```
 
-<br>
+---
 
 # API Endpoints
 
@@ -241,7 +244,7 @@ Response:
 }
 ```
 
-<br>
+---
 
 ## Chat Endpoint
 
@@ -278,7 +281,7 @@ Example Response:
 }
 ```
 
-<br>
+---
 
 # Interactive API Docs
 
@@ -290,7 +293,7 @@ Open:
 http://127.0.0.1:8000/docs
 ```
 
-<br>
+---
 
 # Current Capabilities
 
@@ -302,7 +305,7 @@ http://127.0.0.1:8000/docs
 * SHL-only grounded responses
 * Structured JSON responses
 
-<br>
+---
 
 # Future Improvements
 
